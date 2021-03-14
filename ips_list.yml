@@ -18,9 +18,14 @@
 #  work, make sure to checkout a branch.
 #
 
+cevero-ft-core:
+  commit: v1.0.0
+  group:  cevero
+
 pulp_soc:
-  commit: pulpissimov1
-  group:  pulp-platform
+  commit: pulp_soc_cevero_core_v1.0.0
+  group:  cevero
+
 pulp_cluster:
-  commit: master
+  commit: 684194ec89a61ea85c1c442014c88b0cac6a6fbe
   group:  pulp-platform

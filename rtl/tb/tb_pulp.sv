@@ -26,6 +26,9 @@ module tb_pulp;
 
    /* simulation platform parameters */
 
+   // Choose your core: 0 for RISCY, 1 for ZERORISCY
+   parameter CORE_TYPE            = 1;
+
    // the following parameters can activate instantiation of the verification IPs for SPI, I2C and I2s
    // see the instructions in rtl/vip/{i2c_eeprom,i2s,spi_flash} to download the verification IPs
    parameter  USE_S25FS256S_MODEL = 0;
@@ -387,7 +390,9 @@ module tb_pulp;
    end
 
    /* PULP chip (design under test) */
-   pulp i_dut (
+   pulp #(
+      .CORE_TYPE ( CORE_TYPE )
+   ) i_dut (
       .pad_spim_sdio0     ( w_spi_master_sdio0 ),
       .pad_spim_sdio1     ( w_spi_master_sdio1 ),
       .pad_spim_sdio2     ( w_spi_master_sdio2 ),
